@@ -9,15 +9,31 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd", "gopls", "rust_analyzer" }
+				ensure_installed = { "lua_ls", "clangd", "rust_analyzer" }
 			})
 		end
 	},
 	{
+		"jay-babu/mason-nvim-dap.nvim",
+        config = function()
+            require("mason-nvim-dap").setup({
+                ensure_installed = { "codelldb", "cpptools" },
+                automatic_setup = true,
+            })
+        end
+	},
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
+			lspconfig.clangd.setup({
+				capabilities = capabilities
+			})
+			lspconfig.lua_ls.setup({
+			 	capabilities = capabilities
+			})
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
