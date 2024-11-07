@@ -4,17 +4,19 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 config.front_end = "OpenGL"
-config.max_fps = 144
+config.max_fps = 60
 config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color" -- Set the terminal type
 
-config.font = wezterm.font("JetBrainsMono")
+config.font = wezterm.font("JetBrainsMonoNerdFont")
 config.cell_width = 0.9
-config.window_background_opacity = 0.7
+config.window_background_opacity = 0.8
 config.prefer_egl = true
 config.font_size = 12.0
+
+-- config.color_scheme = 'Batman'
 
 config.window_padding = {
 	left = 10,
@@ -25,7 +27,7 @@ config.window_padding = {
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
--- config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = false
 
 
 -- keymaps
@@ -34,7 +36,7 @@ config.keys = {
 	{
 		key = 'T',
 		mods = 'CTRL|SHIFT|ALT',
-		action = act.SpawnTab 'CurrentPaneDomain',
+		action = act.SpawnTab 'DefaultDomain',
 	},
 	{
 		key = 'Q',
@@ -95,10 +97,10 @@ config.keys = {
 		mods = "CTRL|ALT",
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
-			if overrides.window_background_opacity == 0.7 then
+			if overrides.window_background_opacity == 0.8 then
 				overrides.window_background_opacity = 0.5
 			else
-				overrides.window_background_opacity = 0.7
+				overrides.window_background_opacity = 0.8
 			end
 			window:set_config_overrides(overrides)
 		end),
@@ -106,7 +108,7 @@ config.keys = {
 }
 
 -- color scheme
-config.color_scheme = 'Catppucin Mocha'
+config.color_scheme = 'Catppuccin Mocha'
 
 config.window_frame = {
 	font = wezterm.font({ family = "JetBrainsMono", weight = "Light" }),
@@ -114,7 +116,7 @@ config.window_frame = {
 }
 
 -- config.window_decorations = "RESIZE"
-config.default_prog = { "bash" }
+config.default_prog = { "zsh" }
 config.initial_cols = 80
 
 -- and finally, return the configuration to wezterm
