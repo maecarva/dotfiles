@@ -12,11 +12,9 @@ config.term = "xterm-256color" -- Set the terminal type
 
 config.font = wezterm.font("JetBrainsMonoNerdFont")
 config.cell_width = 0.9
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1.0
 config.prefer_egl = true
 config.font_size = 12.0
-
--- config.color_scheme = 'Batman'
 
 config.window_padding = {
 	left = 10,
@@ -97,10 +95,10 @@ config.keys = {
 		mods = "CTRL|ALT",
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
-			if overrides.window_background_opacity == 0.8 then
-				overrides.window_background_opacity = 0.5
+			if overrides.window_background_opacity == 1.0 then
+				overrides.window_background_opacity = 0.7
 			else
-				overrides.window_background_opacity = 0.8
+				overrides.window_background_opacity = 1.0
 			end
 			window:set_config_overrides(overrides)
 		end),
