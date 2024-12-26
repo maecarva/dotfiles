@@ -117,11 +117,6 @@ config.keys = {
 -- color scheme
 config.color_scheme = 'Catppuccin Mocha'
 
-config.window_frame = {
-	font = wezterm.font({ family = "JetBrainsMono", weight = "Light" }),
-	active_titlebar_bg = "#0c0b0f",
-}
-
 -- config.window_decorations = "RESIZE"
 config.default_prog = { "zsh" }
 config.initial_cols = 80
@@ -129,5 +124,4 @@ config.initial_cols = 80
 -- hyprland
 config.enable_wayland = false
 
--- and finally, return the configuration to wezterm
 return config
