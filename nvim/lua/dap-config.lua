@@ -37,7 +37,28 @@ dap.configurations.cpp = dap.configurations.c
 
 local dapui = require("dapui")
 
-dapui.setup()
+dapui.setup({
+  layouts = {
+    {
+      elements = {
+        'scopes',
+        'breakpoints',
+        'stacks',
+        'watches',
+      },
+      size = 40,
+      position = 'left',
+    },
+    {
+      elements = {
+        'repl',
+        'console',  -- Include the console here
+      },
+      size = 10,
+      position = 'bottom',
+    },
+  },
+})
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()

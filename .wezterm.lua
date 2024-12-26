@@ -4,7 +4,7 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 
 config.front_end = "OpenGL"
-config.max_fps = 60
+config.max_fps = 144
 config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_rate = 500
@@ -22,6 +22,9 @@ config.window_padding = {
 	top = 10,
 	bottom = 10,
 }
+
+-- scrollbar
+config.enable_scroll_bar = true
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
@@ -87,6 +90,12 @@ config.keys = {
 	},
 	-- select panes
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
+	-- select tabs
+	{ key = '{', mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
+	{ key = '}', mods = "CTRL|SHIFT", action = act.ActivateTabRelative(1) },
+	-- move tabs
+	{ key = '{', mods = "CTRL|SHIFT|ALT", action = act.MoveTabRelative(-1) },
+	{ key = '}', mods = "CTRL|SHIFT|ALT", action = act.MoveTabRelative(1) },
 	-- Debug overlay
 	{ key = "D", mods = "CTRL|SHIFT|ALT", action = act.ShowDebugOverlay },
 	-- toggling opacity
@@ -96,7 +105,7 @@ config.keys = {
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
 			if overrides.window_background_opacity == 1.0 then
-				overrides.window_background_opacity = 0.7
+				overrides.window_background_opacity = 0.5
 			else
 				overrides.window_background_opacity = 1.0
 			end
@@ -116,6 +125,9 @@ config.window_frame = {
 -- config.window_decorations = "RESIZE"
 config.default_prog = { "zsh" }
 config.initial_cols = 80
+
+-- hyprland
+config.enable_wayland = false
 
 -- and finally, return the configuration to wezterm
 return config

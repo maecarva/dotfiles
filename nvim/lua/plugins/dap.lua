@@ -14,5 +14,12 @@ return {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
     },
+	{
+    "leoluz/nvim-dap-go",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = function()
+      require('dap-go').setup()
+    end
+  },
 }
 

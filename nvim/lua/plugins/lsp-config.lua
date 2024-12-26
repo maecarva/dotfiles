@@ -17,7 +17,7 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
         config = function()
             require("mason-nvim-dap").setup({
-                ensure_installed = { "codelldb", "cpptools" },
+                ensure_installed = { "codelldb", "cpptools", "delve" },
                 automatic_setup = true,
             })
         end
@@ -34,6 +34,16 @@ return {
 			lspconfig.lua_ls.setup({
 			 	capabilities = capabilities
 			})
+			lspconfig.gopls.setup({
+			 	capabilities = capabilities
+			})
+			lspconfig.ts_ls.setup({
+			 	capabilities = capabilities
+			})
+			lspconfig.sqls.setup({
+			 	capabilities = capabilities
+			})
+
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
