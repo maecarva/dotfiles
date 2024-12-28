@@ -10,9 +10,9 @@ config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color" -- Set the terminal type
 
-config.font = wezterm.font("JetBrainsMonoNerdFont")
+config.font = wezterm.font("JetBrainsMono")
 config.cell_width = 0.9
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.0
 config.prefer_egl = true
 config.font_size = 12.0
 
@@ -24,7 +24,7 @@ config.window_padding = {
 }
 
 -- scrollbar
-config.enable_scroll_bar = true
+-- config.enable_scroll_bar = true
 
 -- tabs
 config.hide_tab_bar_if_only_one_tab = true
@@ -105,7 +105,7 @@ config.keys = {
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
 			if overrides.window_background_opacity == 1.0 then
-				overrides.window_background_opacity = 0.5
+				overrides.window_background_opacity = 0.0
 			else
 				overrides.window_background_opacity = 1.0
 			end
