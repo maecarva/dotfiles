@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd", "rust_analyzer" }
+				ensure_installed = { "lua_ls", "clangd" }
 			})
 		end
 	},
@@ -17,7 +17,7 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
         config = function()
             require("mason-nvim-dap").setup({
-                ensure_installed = { "codelldb", "cpptools", "delve" },
+                ensure_installed = { "cpptools" },
                 automatic_setup = true,
             })
         end
@@ -37,13 +37,9 @@ return {
 			lspconfig.gopls.setup({
 			 	capabilities = capabilities
 			})
-			lspconfig.ts_ls.setup({
+			lspconfig.zls.setup({
 			 	capabilities = capabilities
 			})
-			lspconfig.sqls.setup({
-			 	capabilities = capabilities
-			})
-
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
