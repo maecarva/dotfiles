@@ -1,0 +1,48 @@
+theme = mocha.conf
+font-family = "JetBrains Mono Light"
+shell-integration-features = no-cursor
+
+custom-shader = shaders/bloom1.glsl
+
+font-size = 14
+
+gtk-wide-tabs = false
+
+cursor-style = block
+cursor-style-blink = true
+
+window-padding-x = 5
+window-padding-y = 5
+window-vsync = true
+
+clipboard-write = allow
+clipboard-read = allow
+shell-integration = zsh
+
+# background-blur = true
+# background-opacity = 0.2
+# background-blur-radius = 4
+
+# keybinds
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+right_bracket=next_tab
+keybind = ctrl+shift+left_bracket=previous_tab
+keybind = ctrl+shift+alt+right_bracket=move_tab:+1
+keybind = ctrl+shift+alt+left_bracket=move_tab:-1
+
+keybind = ctrl+shift+alt+h=new_split:down
+keybind = ctrl+shift+alt+v=new_split:right
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+j=goto_split:down
+
+keybind = ctrl+shift+h=resize_split:left,15
+keybind = ctrl+shift+l=resize_split:right,15
+keybind = ctrl+shift+k=resize_split:up,15
+keybind = ctrl+shift+j=resize_split:down,15
+
+keybind = ctrl+e=equalize_splits
+
+keybind = ctrl+alt+shift+x=close_surface
