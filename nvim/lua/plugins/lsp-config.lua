@@ -29,7 +29,9 @@ return {
 
 			local lspconfig = require("lspconfig")
 			lspconfig.clangd.setup({
-				capabilities = capabilities
+				capabilities = require('cmp_nvim_lsp').default_capabilities(),
+				cmd = { "clangd", "--background-index", "--clang-tidy" },
+				root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
 			})
 			lspconfig.lua_ls.setup({
 			 	capabilities = capabilities
