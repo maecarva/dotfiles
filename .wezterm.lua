@@ -12,7 +12,7 @@ config.term = "xterm-256color" -- Set the terminal type
 
 config.font = wezterm.font("JetBrainsMono")
 config.cell_width = 0.9
-config.window_background_opacity = 0.0
+config.window_background_opacity = 0.7
 config.prefer_egl = true
 config.font_size = 12.0
 
@@ -52,7 +52,7 @@ config.keys = {
 	},
 	-- split panes
 	{
-		key = "h",
+		key = "v",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Right",
@@ -60,7 +60,7 @@ config.keys = {
 		}),
 	},
 	{
-		key = "v",
+		key = "h",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Down",
@@ -104,10 +104,10 @@ config.keys = {
 		mods = "CTRL|ALT",
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
-			if overrides.window_background_opacity == 1.0 then
-				overrides.window_background_opacity = 0.0
-			else
+			if overrides.window_background_opacity == 0.7 then
 				overrides.window_background_opacity = 1.0
+			else
+				overrides.window_background_opacity = 0.7
 			end
 			window:set_config_overrides(overrides)
 		end),
@@ -116,6 +116,12 @@ config.keys = {
 
 -- color scheme
 config.color_scheme = 'Catppuccin Mocha'
+
+-- config.colors = {
+-- 	background = '#1f212a',
+-- 	-- foreground = '#7e7edd',
+-- 	foreground = '#9aefea',
+-- }
 
 -- config.window_decorations = "RESIZE"
 config.default_prog = { "zsh" }
