@@ -15,12 +15,12 @@ return {
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-        config = function()
-            require("mason-nvim-dap").setup({
-                ensure_installed = { "cpptools" },
-                automatic_setup = true,
-            })
-        end
+		config = function()
+			require("mason-nvim-dap").setup({
+				ensure_installed = { "cpptools" },
+				automatic_setup = true,
+			})
+		end
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -32,15 +32,18 @@ return {
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
 				cmd = { "clangd", "--background-index", "--clang-tidy" },
 				root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
+				on_attach = function(client, bufnr)
+					client.server_capabilities.documentFormattingProvider = false
+				end,
 			})
 			lspconfig.lua_ls.setup({
-			 	capabilities = capabilities
+				capabilities = capabilities
 			})
 			lspconfig.gopls.setup({
-			 	capabilities = capabilities
+				capabilities = capabilities
 			})
 			lspconfig.zls.setup({
-			 	capabilities = capabilities
+				capabilities = capabilities
 			})
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
