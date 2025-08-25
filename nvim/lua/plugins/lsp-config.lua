@@ -36,6 +36,9 @@ return {
 					client.server_capabilities.documentFormattingProvider = false
 				end,
 			})
+			lspconfig.pyright.setup({
+				capabilities = capabilities
+			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities
 			})
