@@ -32,11 +32,14 @@ return {
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
 				cmd = { "clangd", "--background-index", "--clang-tidy" },
 				root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
-				on_attach = function(client, bufnr)
+				on_attach = function(client, _bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
 			})
 			lspconfig.pyright.setup({
+				capabilities = capabilities
+			})
+			lspconfig.phpactor.setup({
 				capabilities = capabilities
 			})
 			lspconfig.lua_ls.setup({
