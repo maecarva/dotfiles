@@ -6,6 +6,7 @@ return {
 			rust = { "rustfmt" },
 			zig = { "zigfmt" },
 			php = { "php_cs_fixer" },
+			html = { "prettier" },
 			c = {},
 			cpp = {},
 		},
