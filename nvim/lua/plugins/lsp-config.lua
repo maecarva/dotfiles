@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd" }
+				ensure_installed = { "lua_ls", "clangd", "zls", "gopls" }
 			})
 		end
 	},
@@ -35,6 +35,9 @@ return {
 				on_attach = function(client, _bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
+			})
+			lspconfig.vtsls.setup({
+				capabilities = capabilities
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities
