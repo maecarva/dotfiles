@@ -17,6 +17,7 @@ return {
 			css = { "prettierd", "prettier" },
 			cpp = { "clang-format" },
 			c = { "clang-format" },
+			python = { "black" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

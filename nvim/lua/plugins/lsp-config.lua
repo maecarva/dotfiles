@@ -31,7 +31,7 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
 				cmd = { "clangd", "--background-index", "--clang-tidy" },
-				root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
+				root_dir = require("lspconfig.util").root_pattern(".clangd", "compile_commands.json", ".git"),
 				on_attach = function(client, _bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
