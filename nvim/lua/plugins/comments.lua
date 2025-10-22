@@ -1,6 +1,10 @@
 return {
-    'numToStr/Comment.nvim',
-    opts = {
-        -- add any options here
-    }
+	'numToStr/Comment.nvim',
+	config = function()
+		local ft = require('Comment.ft')
+		ft.set('s', ';%s')
+	end,
+	opts = {
+		-- add any options here
+	}
 }

@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd", "zls", "gopls" }
+				ensure_installed = { "lua_ls", "clangd", "zls" }
 			})
 		end
 	},
@@ -30,8 +30,8 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.clangd.setup({
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
-				cmd = { "clangd", "--background-index", "--clang-tidy" },
-				root_dir = require("lspconfig.util").root_pattern(".clangd", "compile_commands.json", ".git"),
+				cmd = { "clangd", "--background-index" },
+				root_dir = require('lspconfig').util.root_pattern('.clangd', 'compile_commands.json', '.git', 'Makefile'),
 				on_attach = function(client, _bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
