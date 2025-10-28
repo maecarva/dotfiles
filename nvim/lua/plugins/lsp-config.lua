@@ -26,16 +26,19 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 			local lspconfig = require("lspconfig")
+
+
 			lspconfig.clangd.setup({
 				capabilities = require('cmp_nvim_lsp').default_capabilities(),
 				cmd = { "clangd", "--background-index" },
 				root_dir = require('lspconfig').util.root_pattern('.clangd', 'compile_commands.json', '.git', 'Makefile'),
+				filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 				on_attach = function(client, _bufnr)
 					client.server_capabilities.documentFormattingProvider = false
 				end,
 			})
+
 			lspconfig.vtsls.setup({
 				capabilities = capabilities
 			})
@@ -52,6 +55,9 @@ return {
 				capabilities = capabilities
 			})
 			lspconfig.zls.setup({
+				capabilities = capabilities
+			})
+			lspconfig.protols.setup({
 				capabilities = capabilities
 			})
 
