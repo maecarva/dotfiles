@@ -45,9 +45,6 @@ return {
 			lspconfig.pyright.setup({
 				capabilities = capabilities
 			})
-			lspconfig.phpactor.setup({
-				capabilities = capabilities
-			})
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities
 			})
@@ -57,21 +54,6 @@ return {
 			lspconfig.zls.setup({
 				capabilities = capabilities
 			})
-			lspconfig.protols.setup({
-				capabilities = capabilities
-			})
-			lspconfig.ols.setup({
-				capabilities = capabilities
-			})
-			lspconfig.c3_lsp.setup({
-				capabilities = capabilities,
-				filetypes = { "c3", "c3i" },
-				cmd = { "/home/mael/c3/c3lsp" }, 
-				root_dir = function(fname)
-					return require('lspconfig').util.root_pattern('.git', 'c3.json')(fname) or vim.fs.dirname(fname)
-				end,
-			})
-
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 			vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
