@@ -1,1 +1,5 @@
+# Use custom format
+format = '''$directory$rust$package'''
+
+
 add_newline = false
