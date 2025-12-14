@@ -6,8 +6,8 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt EXTENDED_HISTORY  
-setopt APPEND_HISTORY 
+setopt EXTENDED_HISTORY
+setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
@@ -36,3 +36,9 @@ alias ....='cd ../../..'
 
 alias ct="codecrafters test"
 alias cs="codecrafters submit"
+
+# PATH
+# pipx
+export PATH="/home/mael/.local/bin:$PATH"
+# golang
+export PATH="/home/mael/go/bin/:$PATH"
