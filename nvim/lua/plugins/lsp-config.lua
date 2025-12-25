@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "clangd", "zls" }
+				ensure_installed = { "lua_ls", "clangd", "zls", "omnisharp" }
 			})
 		end
 	},
@@ -17,7 +17,7 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
 			require("mason-nvim-dap").setup({
-				ensure_installed = { "cpptools" },
+				ensure_installed = { "cpptools", "netcoredbg" },
 				automatic_setup = true,
 			})
 		end
@@ -42,6 +42,9 @@ return {
 			lspconfig.vtsls.setup({
 				capabilities = capabilities
 			})
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities
+			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities
 			})
@@ -54,9 +57,7 @@ return {
 			lspconfig.zls.setup({
 				capabilities = capabilities
 			})
-			lspconfig.templ.setup({
-				capabilities = capabilities
-			})
+
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 			vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})

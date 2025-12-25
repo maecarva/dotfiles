@@ -1,16 +1,3 @@
--- return {
--- 	"nvim-treesitter/nvim-treesitter",
--- 	build = ":TSUpdate",
--- 	config = function()
--- 		local config = require("nvim-treesitter.configs")
--- 		config.setup({
--- 			ensure_installed = { "lua", "c", "cpp", "rust", "html", "javascript", "typescript", "svelte", "go", "php", "python", "zig", "odin", "c3" },
--- 			highlight = { enable = true },
--- 			indent = { enable = true },
--- 			parser_install_dir = "~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/parsers",
--- 		})
--- 	end
--- }
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
@@ -27,7 +14,9 @@ return {
 
 		local config = require("nvim-treesitter.configs")
 		config.setup({
-			ensure_installed = { "lua", "c", "cpp", "rust", "html", "javascript", "typescript", "go", "zig", "templ" },
+			ensure_installed = {
+				"lua", "c", "cpp", "rust", "html", "javascript", "typescript", "go", "zig", "templ"
+			},
 			highlight = { enable = true },
 			indent = { enable = true },
 
