@@ -1,0 +1,20 @@
+BasedOnStyle: LLVM
+ColumnLimit: 100
+UseTab: Always
+IndentWidth: 4
+TabWidth: 4
+
+# --- Alignement ---
+AlignConsecutiveDeclarations: AcrossEmptyLinesAndComments
+AlignConsecutiveAssignments: AcrossEmptyLinesAndComments
+AlignOperands: AlignAfterOperator
+AlignTrailingComments: true
+
+# --- Spaces ---
+PointerAlignment: Left
+
+# --- Misc ---
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: Empty
+KeepEmptyLinesAtTheStartOfBlocks: false
+SortIncludes: false
