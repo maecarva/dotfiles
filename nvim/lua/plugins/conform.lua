@@ -3,7 +3,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			go = { "goimports" },
-			rust = { "rustfmt" },
+			rust = { "leptosfmt", "rustfmt" },
 			zig = { "zigfmt" },
 			php = { "php_cs_fixer" },
 			html = { "prettierd" },

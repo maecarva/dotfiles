@@ -25,6 +25,14 @@ return {
 		end
 	},
 	{
+		"rayliwell/tree-sitter-rstml",
+		dependencies = { "nvim-treesitter" },
+		build = ":TSUpdate",
+		config = function()
+			require("tree-sitter-rstml").setup()
+		end
+	},
+	{
 		"windwp/nvim-ts-autotag",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()

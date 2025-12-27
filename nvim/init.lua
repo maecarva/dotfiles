@@ -20,6 +20,8 @@ vim.filetype.add({
 	},
 })
 
+
+
 require("vim-options")
 require("lazy").setup("plugins", opts)
 require("dap-config");
