@@ -57,6 +57,10 @@ return {
 			lspconfig.zls.setup({
 				capabilities = capabilities
 			})
+			lspconfig.postgres_lsp.setup({
+				cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/postgres-language-server") },
+				capabilities = capabilities
+			})
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

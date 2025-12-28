@@ -18,6 +18,7 @@ return {
 			cpp = { "clang-format" },
 			c = { "clang-format" },
 			python = { "black" },
+			sql = { "pg_format" },
 		},
 		format_on_save = {
 			timeout_ms = 5000,
