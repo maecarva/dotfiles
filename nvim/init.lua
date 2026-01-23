@@ -14,14 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 
-vim.filetype.add({
-	extension = {
-		tpp = 'cpp',
-	},
-})
-
-
-
 require("vim-options")
 require("lazy").setup("plugins", opts)
 require("dap-config");
