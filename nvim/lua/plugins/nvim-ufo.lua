@@ -6,6 +6,9 @@ return {
   },
   event = "BufReadPost",
   opts = {
+	close_fold_kinds_for_ft = {
+        default = {}
+    },
     provider_selector = function(bufnr, filetype, buftype)
       return { "treesitter", "indent" }
     end,
