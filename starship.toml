@@ -1,7 +1,25 @@
 add_newline = false
 
-[username]
-style_user = "green bold"
-style_root = "red bold"
-format = "[$user]($style) "
-show_always = true
+format = """
+[╭─](bold blue)$directory$rust$git_branch$git_status
+[╰─](bold blue)$character"""
+
+[cmd_duration]
+min_time = 2_000
+format = "[$duration](bold yellow) "
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "bold cyan"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
