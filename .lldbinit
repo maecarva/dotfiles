@@ -1,0 +1,10 @@
+# ~/.lldbinit
+
+settings set thread-format "thread #${thread.index}: tid = ${thread.id}{, ${frame.pc}}{ ${module.file.basename}{`${function.name-with-args}{${frame.no-debug}${function.pc-offset}}}}{ at ${line.file.basename}:${line.number}}{, stop reason = ${thread.stop-reason}}\n"
+
+settings set auto-confirm true
+
+settings set stop-line-count-before 5
+settings set stop-line-count-after 5
+
+settings set target.x86-disassembly-flavor intel
