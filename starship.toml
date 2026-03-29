@@ -1,8 +1,19 @@
 add_newline = false
 
 format = """
-[╭─](bold blue)$directory$rust$git_branch$git_status
-[╰─](bold blue)$character"""
+[╭─](bold blue) $username$hostname $directory$git_branch$git_status
+[╰─](bold blue) $cmd_duration$character"""
+
+# Config user/machine 
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "green"
+
+[hostname]
+ssh_only = false
+format = "[@$hostname]($style)"
+style = "green"
 
 [cmd_duration]
 min_time = 2_000
@@ -14,7 +25,6 @@ truncation_symbol = "…/"
 style = "bold cyan"
 
 [git_branch]
-symbol = " "
 style = "bold purple"
 
 [git_status]
