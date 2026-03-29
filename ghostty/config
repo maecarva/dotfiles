@@ -24,25 +24,25 @@ shell-integration = zsh
 # background-blur-radius = 4
 
 # keybinds
-keybind = ctrl+shift+t=new_tab
-keybind = ctrl+shift+right_bracket=next_tab
-keybind = ctrl+shift+left_bracket=previous_tab
-keybind = ctrl+shift+alt+right_bracket=move_tab:+1
-keybind = ctrl+shift+alt+left_bracket=move_tab:-1
+keybind = cmd+t=new_tab
+keybind = cmd+shift+right_bracket=next_tab
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+alt+right_bracket=move_tab:+1
+keybind = cmd+shift+alt+left_bracket=move_tab:-1
 
-keybind = ctrl+shift+alt+h=new_split:down
-keybind = ctrl+shift+alt+v=new_split:right
+keybind = cmd+d=new_split:down
+keybind = cmd+shift+d=new_split:right
 
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+l=goto_split:right
 keybind = ctrl+k=goto_split:up
 keybind = ctrl+j=goto_split:down
 
-keybind = ctrl+shift+h=resize_split:left,15
-keybind = ctrl+shift+l=resize_split:right,15
-keybind = ctrl+shift+k=resize_split:up,15
-keybind = ctrl+shift+j=resize_split:down,15
+keybind = cmd+shift+h=resize_split:left,15
+keybind = cmd+shift+l=resize_split:right,15
+keybind = cmd+shift+k=resize_split:up,15
+keybind = cmd+shift+j=resize_split:down,15
 
-keybind = ctrl+e=equalize_splits
+keybind = cmd+e=equalize_splits
 
-keybind = ctrl+alt+shift+x=close_surface
+keybind = cmd+x=close_surface
